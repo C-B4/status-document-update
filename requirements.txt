@@ -1,0 +1,2 @@
+cassandra-driver==3.8.1
+six==1.10.0
