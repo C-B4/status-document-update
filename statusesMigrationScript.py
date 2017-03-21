@@ -121,7 +121,7 @@ def parseApplicationUUIDsFromFile(applicationsPath):
     with open(applicationsPath, 'r') as f:
         content = f.readlines()
     # you may also want to remove whitespace characters like `\n` at the end of each line
-    result = [UUID(x.strip()) for x in content]
+    result = [UUID(x.strip()) for x in content if not x.startswith('#')]
     return result
 
 
