@@ -201,7 +201,10 @@ def splitConvertToResponsesAndPutIfAbsent(session, userUUID, content, minSnapsho
         print('isPassed30days : ' + str(isPassed30days))
 
     data = json.loads(content)
-    version = data['version']
+    if data.get('version'):
+        version = data['version']
+    else:
+        version = 'MISSING'
     deployId = data['deployId']
     alias = data['alias']
     actions = data['actions']
